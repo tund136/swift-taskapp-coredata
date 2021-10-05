@@ -8,13 +8,28 @@
 import SwiftUI
 
 struct DateButton: View {
+    var title: String
+    @ObservedObject var homeData: HomeViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: {
+            
+        }, label: {
+            Text(title)
+                .padding()
+                .background(
+                    LinearGradient(
+                        gradient: Gradient(
+                            colors: [
+                                Color(.systemOrange),
+                                Color(.systemRed)
+                            ]
+                        ),
+                        startPoint: .leading,endPoint: .trailing
+                    )
+                )
+                .cornerRadius(6)
+        })
     }
 }
 
-struct DateButton_Previews: PreviewProvider {
-    static var previews: some View {
-        DateButton()
-    }
-}
