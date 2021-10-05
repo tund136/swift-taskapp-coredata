@@ -16,6 +16,7 @@
 		AD4ED028270BEDC000B29009 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4ED027270BEDC000B29009 /* Home.swift */; };
 		AD4ED02A270BEDEB00B29009 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4ED029270BEDEB00B29009 /* HomeViewModel.swift */; };
 		AD4ED02C270BEF4600B29009 /* NewDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4ED02B270BEF4600B29009 /* NewDataView.swift */; };
+		AD4ED030270BF26600B29009 /* DateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4ED02F270BF26600B29009 /* DateButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		AD4ED027270BEDC000B29009 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		AD4ED029270BEDEB00B29009 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		AD4ED02B270BEF4600B29009 /* NewDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDataView.swift; sourceTree = "<group>"; };
+		AD4ED02F270BF26600B29009 /* DateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				AD4ED014270B901E00B29009 /* ContentView.swift */,
-				AD4ED027270BEDC000B29009 /* Home.swift */,
-				AD4ED02B270BEF4600B29009 /* NewDataView.swift */,
+				AD4ED02E270BF23000B29009 /* Helpers */,
+				AD4ED02D270BF22800B29009 /* TaskApp */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -96,6 +98,23 @@
 				AD4ED029270BEDEB00B29009 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AD4ED02D270BF22800B29009 /* TaskApp */ = {
+			isa = PBXGroup;
+			children = (
+				AD4ED027270BEDC000B29009 /* Home.swift */,
+				AD4ED02B270BEF4600B29009 /* NewDataView.swift */,
+			);
+			path = TaskApp;
+			sourceTree = "<group>";
+		};
+		AD4ED02E270BF23000B29009 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AD4ED02F270BF26600B29009 /* DateButton.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +192,7 @@
 				AD4ED015270B901E00B29009 /* ContentView.swift in Sources */,
 				AD4ED028270BEDC000B29009 /* Home.swift in Sources */,
 				AD4ED013270B901E00B29009 /* TaskAppCoreDataApp.swift in Sources */,
+				AD4ED030270BF26600B29009 /* DateButton.swift in Sources */,
 				AD4ED01F270B902300B29009 /* TaskAppCoreData.xcdatamodeld in Sources */,
 				AD4ED02C270BEF4600B29009 /* NewDataView.swift in Sources */,
 			);
