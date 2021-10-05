@@ -59,12 +59,12 @@ struct NewDataView: View {
             }, label: {
                 Label(title: {
                     Text("Add Now")
-                        .font(.title)
+                        .font(.title2)
                         .foregroundColor(.white)
                         .fontWeight(.bold)
                 }, icon: {
                     Image(systemName: "plus")
-                        .font(.title)
+                        .font(.title2)
                         .foregroundColor(.white)
                 })
                     .padding(.vertical)
