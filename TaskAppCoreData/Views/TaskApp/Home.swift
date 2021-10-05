@@ -10,6 +10,7 @@ import CoreData
 
 struct Home: View {
     @StateObject var homeData = HomeViewModel()
+    @Environment(\.managedObjectContext) var context
     
     // Fetching Data
     @FetchRequest(entity: Task.entity(), sortDescriptors: [NSSortDescriptor(key: "date", ascending: true)], animation: .spring()) var results: FetchedResults<Task>
@@ -50,7 +51,8 @@ struct Home: View {
                                 })
                                 
                                 Button(action: {
-                                    
+                                    context.delete(task)
+                                    try! context.save()
                                 }, label: {
                                     Text("Delete")
                                 })
