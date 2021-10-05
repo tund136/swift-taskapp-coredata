@@ -38,7 +38,49 @@ struct NewDataView: View {
             }
             .padding()
             
+            HStack {
+                DateButton(title: "Today", homeData: homeData)
+                
+                DateButton(title: "Tomorrow", homeData: homeData)
+                
+                // Date Picker
+                DatePicker("", selection: $homeData.date)
+                    .labelsHidden()
+            }
+            .padding()
+            
             Spacer()
+            
+            // Add Button
+            Button(action: {
+                
+            }, label: {
+                Label(title: {
+                    Text("Add Now")
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                }, icon: {
+                    Image(systemName: "plus")
+                        .font(.title)
+                        .foregroundColor(.white)
+                })
+                    .padding(.vertical)
+                    .frame(width: UIScreen.main.bounds.width - 30)
+                    .background(
+                        LinearGradient(
+                            gradient: Gradient(
+                                colors: [
+                                    Color(.systemOrange),
+                                    Color(.systemRed)
+                                ]
+                            ),
+                            startPoint: .leading,endPoint: .trailing
+                        )
+                    )
+                    .cornerRadius(8)
+            })
+                .padding()
         }
         .background(Color.black.opacity(0.06).ignoresSafeArea(.all, edges: .bottom))
     }
