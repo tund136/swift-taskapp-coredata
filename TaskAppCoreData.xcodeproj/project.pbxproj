@@ -64,7 +64,6 @@
 				AD4ED026270BEDAF00B29009 /* ViewModel */,
 				AD4ED025270BEDA900B29009 /* Views */,
 				AD4ED012270B901E00B29009 /* TaskAppCoreDataApp.swift */,
-				AD4ED014270B901E00B29009 /* ContentView.swift */,
 				AD4ED016270B902200B29009 /* Assets.xcassets */,
 				AD4ED01B270B902300B29009 /* Persistence.swift */,
 				AD4ED01D270B902300B29009 /* TaskAppCoreData.xcdatamodeld */,
@@ -84,6 +83,7 @@
 		AD4ED025270BEDA900B29009 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AD4ED014270B901E00B29009 /* ContentView.swift */,
 				AD4ED027270BEDC000B29009 /* Home.swift */,
 				AD4ED02B270BEF4600B29009 /* NewDataView.swift */,
 			);

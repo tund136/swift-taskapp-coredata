@@ -17,7 +17,7 @@ struct Home: View {
             Text("Button")
         })
             .sheet(isPresented: $homeData.isNewData) {
-                
+                NewDataView(homeData: homeData)
             }
     }
 }

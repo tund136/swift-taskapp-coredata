@@ -11,7 +11,34 @@ struct NewDataView: View {
     @ObservedObject var homeData: HomeViewModel
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                Text("Add New Task")
+                    .font(.largeTitle)
+                    .foregroundColor(.black)
+                    .fontWeight(.heavy)
+                
+                Spacer()
+            }
+            .padding()
+            
+            TextEditor(text: $homeData.content)
+                .padding()
+            
+            Divider()
+                .padding(.horizontal)
+            
+            HStack {
+                Text("When")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
+                
+                Spacer()
+            }
+            
+            Spacer()
+        }
     }
 }
 
