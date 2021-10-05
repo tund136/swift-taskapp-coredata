@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 class HomeViewModel: ObservableObject {
     @Published var content = ""
@@ -34,6 +35,22 @@ class HomeViewModel: ObservableObject {
             date = calendar.date(byAdding: .day, value: 1, to: Date())!
         } else {
             // Do something
+        }
+    }
+    
+    func writeData(context: NSManagedObjectContext) {
+        let newTask = Task(context: context)
+        newTask.date = date
+        newTask.content = content
+        
+        // Saving data
+        do {
+            try context.save()
+            
+            // Success means closing view
+            isNewData.toggle()
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }
