@@ -13,14 +13,15 @@ struct DateButton: View {
     
     var body: some View {
         Button(action: {
-            
+            homeData.updateDate(value: title)
         }, label: {
             Text(title)
                 .fontWeight(.bold)
-                .foregroundColor(.white)
+                .foregroundColor(homeData.checkDate() == title ? .white : .gray)
                 .padding(.vertical)
                 .padding(.horizontal, 20)
                 .background(
+                    homeData.checkDate() == title ?
                     LinearGradient(
                         gradient: Gradient(
                             colors: [
@@ -30,6 +31,8 @@ struct DateButton: View {
                         ),
                         startPoint: .leading,endPoint: .trailing
                     )
+                    :
+                        LinearGradient(gradient: .init(colors: [Color.white]), startPoint: .leading, endPoint: .trailing)
                 )
                 .cornerRadius(6)
         })
