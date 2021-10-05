@@ -16,7 +16,10 @@ struct DateButton: View {
             
         }, label: {
             Text(title)
-                .padding()
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+                .padding(.vertical)
+                .padding(.horizontal, 20)
                 .background(
                     LinearGradient(
                         gradient: Gradient(

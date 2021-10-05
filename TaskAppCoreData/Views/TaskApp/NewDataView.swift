@@ -41,15 +41,17 @@ struct NewDataView: View {
             HStack {
                 DateButton(title: "Today", homeData: homeData)
                 
+                Spacer()
+                
                 DateButton(title: "Tomorrow", homeData: homeData)
                 
+                Spacer()
+                
                 // Date Picker
-                DatePicker("", selection: $homeData.date)
+                DatePicker("", selection: $homeData.date, displayedComponents: .date)
                     .labelsHidden()
             }
             .padding()
-            
-            Spacer()
             
             // Add Button
             Button(action: {
