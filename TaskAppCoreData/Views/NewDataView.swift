@@ -36,9 +36,11 @@ struct NewDataView: View {
                 
                 Spacer()
             }
+            .padding()
             
             Spacer()
         }
+        .background(Color.black.opacity(0.06).ignoresSafeArea(.all, edges: .bottom))
     }
 }
 
