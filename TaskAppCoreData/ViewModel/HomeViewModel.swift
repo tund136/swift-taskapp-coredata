@@ -16,6 +16,10 @@ class HomeViewModel: ObservableObject {
     @Published var isNewData = false
     
     // Checking and Updating Date
+    
+    // Storing Update Item
+    @Published var updateItem: Task!
+    
     let calendar = Calendar.current
     
     func checkDate() -> String {
@@ -39,6 +43,24 @@ class HomeViewModel: ObservableObject {
     }
     
     func writeData(context: NSManagedObjectContext) {
+        
+        // Updating item
+        if updateItem != nil {
+            // Means update old data
+            updateItem.date = date
+            updateItem.content = content
+            
+            try! context.save()
+            
+            // Removing updateItem if successful
+            updateItem = nil
+            isNewData.toggle()
+            content = ""
+            date = Date()
+            
+            return
+        }
+        
         let newTask = Task(context: context)
         newTask.date = date
         newTask.content = content
@@ -49,8 +71,18 @@ class HomeViewModel: ObservableObject {
             
             // Success means closing view
             isNewData.toggle()
+            content = ""
+            date = Date()
         } catch {
             print(error.localizedDescription)
         }
+    }
+    
+    func editItem(item: Task) {
+        updateItem = item
+        // Toggling the newDataView
+        date = item.date!
+        content = item.content!
+        isNewData.toggle()
     }
 }

@@ -14,7 +14,7 @@ struct NewDataView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Add New Task")
+                Text("\(homeData.updateItem == nil ? "Add New" : "Update") Task")
                     .font(.largeTitle)
                     .foregroundColor(.black)
                     .fontWeight(.heavy)
@@ -59,12 +59,12 @@ struct NewDataView: View {
                 homeData.writeData(context: context)
             }, label: {
                 Label(title: {
-                    Text("Add Now")
+                    Text(homeData.updateItem == nil ? "Add Now" : "Update")
                         .font(.title2)
                         .foregroundColor(.white)
                         .fontWeight(.bold)
                 }, icon: {
-                    Image(systemName: "plus")
+                    Image(systemName: homeData.updateItem == nil ? "plus" : "square.and.arrow.down")
                         .font(.title2)
                         .foregroundColor(.white)
                 })

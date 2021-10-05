@@ -31,35 +31,47 @@ struct Home: View {
                 .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
                 .background(Color.white)
                 
-                ScrollView(.vertical, showsIndicators: false) {
-                    LazyVStack(alignment: .leading, spacing: 20) {
-                        ForEach(results) { task in
-                            VStack(alignment: .leading, spacing: 5) {
-                                Text(task.content ?? "")
-                                    .font(.title)
-                                    .fontWeight(.bold)
-                                
-                                Text(task.date ?? Date(), style: .date)
-                                    .fontWeight(.bold)
-                            }
-                            .foregroundColor(.black)
-                            .contextMenu {
-                                Button(action: {
+                // Empty View
+                if results.isEmpty {
+                    Spacer()
+                    
+                    Text("No Tasks!")
+                        .font(.largeTitle)
+                        .fontWeight(.heavy)
+                        .foregroundColor(.black)
+                    
+                    Spacer()
+                } else {
+                    ScrollView(.vertical, showsIndicators: false) {
+                        LazyVStack(alignment: .leading, spacing: 20) {
+                            ForEach(results) { task in
+                                VStack(alignment: .leading, spacing: 5) {
+                                    Text(task.content ?? "")
+                                        .font(.title)
+                                        .fontWeight(.bold)
                                     
-                                }, label: {
-                                    Text("Edit")
-                                })
-                                
-                                Button(action: {
-                                    context.delete(task)
-                                    try! context.save()
-                                }, label: {
-                                    Text("Delete")
-                                })
+                                    Text(task.date ?? Date(), style: .date)
+                                        .fontWeight(.bold)
+                                }
+                                .foregroundColor(.black)
+                                .contextMenu {
+                                    Button(action: {
+                                        homeData.editItem(item: task)
+                                    }, label: {
+                                        Text("Edit")
+                                    })
+                                    
+                                    Button(action: {
+                                        context.delete(task)
+                                        try! context.save()
+                                    }, label: {
+                                        Text("Delete")
+                                    })
+                                }
                             }
                         }
+                        .padding()
                     }
-                    .padding()
                 }
             }
             
